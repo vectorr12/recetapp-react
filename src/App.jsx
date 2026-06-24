@@ -16,6 +16,7 @@ function App() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todas')
   const [ordenSeleccionado, setOrdenSeleccionado] = useState('nombre')
   const [soloVegetarianas, setSoloVegetarianas] = useState(false)
+  const [busquedaNombre, setBusquedaNombre] = useState('')
 
   const recetasFiltradas = useMemo(() => {
     return recetas
@@ -25,7 +26,10 @@ function App() {
           : receta.categoria === categoriaSeleccionada,
       )
       .filter((receta) => (soloVegetarianas ? receta.esVegetariana : true))
-  }, [categoriaSeleccionada, soloVegetarianas])
+      .filter((receta) =>
+        receta.nombre.toLowerCase().includes(busquedaNombre.toLowerCase().trim()),
+      )
+  }, [categoriaSeleccionada, soloVegetarianas, busquedaNombre])
 
   const recetasOrdenadas = useMemo(() => {
     return [...recetasFiltradas].sort((a, b) => {
@@ -55,6 +59,8 @@ function App() {
         onOrdenChange={setOrdenSeleccionado}
         soloVegetarianas={soloVegetarianas}
         onVegetarianaToggle={setSoloVegetarianas}
+        busquedaNombre={busquedaNombre}
+        onBusquedaNombreChange={setBusquedaNombre}
         totalRecetas={recetasFiltradas.length}
       />
 

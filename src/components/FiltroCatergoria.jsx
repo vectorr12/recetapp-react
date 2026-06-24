@@ -7,6 +7,8 @@ function FiltroCatergoria({
   onOrdenChange,
   soloVegetarianas,
   onVegetarianaToggle,
+  busquedaNombre,
+  onBusquedaNombreChange,
   totalRecetas,
 }) {
   return (
@@ -17,6 +19,16 @@ function FiltroCatergoria({
       </div>
 
       <div className="filtro-controles">
+        <label>
+          Buscar por nombre
+          <input
+            type="text"
+            value={busquedaNombre}
+            onChange={(event) => onBusquedaNombreChange(event.target.value)}
+            placeholder="Ej. Tarta de Verduras"
+          />
+        </label>
+
         <label>
           Categoría
           <select

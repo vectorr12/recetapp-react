@@ -89,6 +89,7 @@ body {
   color: var(--text);
 }
 
+.filtro-controles input[type='text'],
 .filtro-controles select,
 .filtro-controles input[type='checkbox'] {
   border: 1px solid var(--border);
@@ -96,6 +97,10 @@ body {
   padding: 12px 14px;
   font-size: 1rem;
   background: #fff;
+}
+
+.filtro-controles input[type='text'] {
+  width: 100%;
 }
 
 .checkbox-label {

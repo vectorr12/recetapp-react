@@ -10,12 +10,15 @@ function FiltroCatergoria({
   busquedaNombre,
   onBusquedaNombreChange,
   totalRecetas,
+  vegetarianasCount,
 }) {
   return (
     <section className="panel-filtros">
       <div className="filtro-titulo">
         <h2>Controles de receta</h2>
-        <p>{totalRecetas} receta{totalRecetas === 1 ? '' : 's'} encontrada{totalRecetas === 1 ? '' : 's'}</p>
+        <p>
+          {totalRecetas} receta{totalRecetas === 1 ? '' : 's'} encontrada{totalRecetas === 1 ? '' : 's'} · {vegetarianasCount} vegetariana{vegetarianasCount === 1 ? '' : 's'}
+        </p>
       </div>
 
       <div className="filtro-controles">

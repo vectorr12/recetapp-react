@@ -148,7 +148,14 @@ body {
 }
 
 .receta-card.vegetariana {
-  border-color: rgba(76, 149, 108, 0.35);
+  border-color: rgba(76, 149, 108, 0.6);
+  background: rgba(234, 247, 238, 0.9);
+}
+
+.receta-card.vegetariana .categoria-pill,
+.receta-card.vegetariana .badge-vegetariana {
+  background: #daf3dd;
+  color: #3f7753;
 }
 
 .receta-card.categoria-entrada {

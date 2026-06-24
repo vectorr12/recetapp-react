@@ -40,6 +40,8 @@ function App() {
     })
   }, [recetasFiltradas, ordenSeleccionado])
 
+  const vegetarianasContador = recetasFiltradas.filter((receta) => receta.esVegetariana).length
+
   return (
     <main className="app-container">
       <header className="hero-section">
@@ -62,6 +64,7 @@ function App() {
         busquedaNombre={busquedaNombre}
         onBusquedaNombreChange={setBusquedaNombre}
         totalRecetas={recetasFiltradas.length}
+        vegetarianasCount={vegetarianasContador}
       />
 
       <ListaRecetas recetas={recetasOrdenadas} />

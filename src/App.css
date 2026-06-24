@@ -1,184 +1,259 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
+:root {
+  --bg: #f8f7f3;
+  --panel: #ffffff;
+  --border: #dcd8d0;
+  --text: #2e2a33;
+  --muted: #6d6875;
+  --accent: #8d5cf8;
+  --accent-soft: #efe5ff;
+  --vegetal: #4c956c;
+  --vegetal-soft: #eaf7ee;
+  --shadow: 0 18px 45px rgba(38, 35, 49, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app-container {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.hero-section {
+  padding: 32px 24px;
+  background: linear-gradient(135deg, rgba(141, 92, 248, 0.16), rgba(255, 255, 255, 0.8));
+  border: 1px solid var(--border);
+  border-radius: 24px;
   margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 12px;
 }
 
-#center {
+.hero-section h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+}
+
+.hero-section p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 720px;
+}
+
+.panel-filtros {
+  display: grid;
+  gap: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  margin-bottom: 24px;
+}
+
+.filtro-titulo h2 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.filtro-titulo p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.filtro-controles {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.filtro-controles label {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
   gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  font-size: 0.95rem;
+  color: var(--text);
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.filtro-controles select,
+.filtro-controles input[type='checkbox'] {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  background: #fff;
 }
 
-.ticks {
+.checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-label input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+}
+
+.lista-recetas {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.estado-vacio {
+  padding: 32px;
+  text-align: center;
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+}
+
+.receta-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow: var(--shadow);
   position: relative;
-  width: 100%;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+.receta-card:hover {
+  transform: translateY(-2px);
+}
+
+.receta-card.vegetariana {
+  border-color: rgba(76, 149, 108, 0.35);
+}
+
+.receta-card.categoria-entrada {
+  background: #f4f8ff;
+  border-color: #c7d6ff;
+}
+
+.receta-card.categoria-fondo {
+  background: #fff6ed;
+  border-color: #ffd3b3;
+}
+
+.receta-card.categoria-postre {
+  background: #faf7ff;
+  border-color: #e4d5ff;
+}
+
+.receta-card.categoria-entrada .categoria-pill,
+.receta-card.categoria-entrada .badge-vegetariana {
+  background: #d8e5ff;
+  color: #2d4fa3;
+}
+
+.receta-card.categoria-fondo .categoria-pill,
+.receta-card.categoria-fondo .badge-vegetariana {
+  background: #ffe9d0;
+  color: #a85d1c;
+}
+
+.receta-card.categoria-postre .categoria-pill,
+.receta-card.categoria-postre .badge-vegetariana {
+  background: #f2e8ff;
+  color: #6f4aad;
+}
+
+.receta-encabezado {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.receta-encabezado h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.subtexto {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.categoria-pill {
+  display: inline-flex;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3eff9;
+  color: #5a3ba5;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.descripcion {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.ingredientes {
+  display: grid;
+  gap: 10px;
+}
+
+.ingredientes strong {
+  color: var(--text);
+}
+
+.ingredientes ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.ingredientes li {
+  margin-bottom: 6px;
+}
+
+.badge-vegetariana {
+  align-self: flex-start;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--vegetal-soft);
+  color: var(--vegetal);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 640px) {
+  .app-container {
+    padding: 18px 0 32px;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .hero-section,
+  .panel-filtros {
+    padding: 20px;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+
+  .receta-encabezado {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -1,0 +1,2 @@
+promp: 1 haz una apliacacion web en con reacht simple ,ordena y que permita ver las recetas distinguir su categoria y resalar las opciones vegetarianas usa los datos de de recetas de el archivo recetas.js etapa 2 utilidad:muy util  reflexion:me dio una base del recetario
+prom : 2 ahora el compontere recetacard recibe por props :nombre origen ,porciones categorias , descricpcion y aplaica un estilo deferente segun categoria  etapa: 2 utilidad:util reflexion ayudo en termitar todo lo que se pedia en la etapa 2 especial mentwe el el estido diferen segun categoria
